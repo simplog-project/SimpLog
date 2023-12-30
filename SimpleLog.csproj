@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>Georgi Chekanov</Authors>
+	<AssemblyName>Georgi Chekanov</AssemblyName>
+    <Version>2.2.4</Version>
+    <PackageId>SimpLog</PackageId>
+    <Description>A simple way of logging event in a log files. Can be set up to save into a file, send logs to an email or to save them in a database. Works for NetCore versions</Description>
+    <Copyright>Copyright (c) Georgi Chekanov 2023</Copyright>
+    <Company>Georgi Chekanov</Company>
+    <Product>SimpLog</Product>
+    <PackageTags>log, .net core, logging, simple, log email, send email, mssql log, mysql log, postgresql log, mongodb log </PackageTags>
+    <AssemblyVersion></AssemblyVersion>
+    <SignAssembly>False</SignAssembly>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
+	<RepositoryUrl>https://github.com/gchekanov/SimpLog</RepositoryUrl>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+
+	<PropertyGroup>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<PackageReleaseNotes>- .net 8 added
+- library works without configuration file. You can read about default values in the README file.</PackageReleaseNotes>
+	</PropertyGroup>
+
+
+	<ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="2.21.0" />
+    <PackageReference Include="MySqlConnector" Version="2.2.7" />
+    <PackageReference Include="Npgsql" Version="7.0.4" />
+    <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="3.21.110" />
+    <PackageReference Include="System.Data.OleDb" Version="7.0.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\SimpLog.FileLog\SimpLog.FileLog\SimpLog.FileLog.csproj" />
+  </ItemGroup>
+
+</Project>
