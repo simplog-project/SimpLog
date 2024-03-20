@@ -1,14 +1,7 @@
-﻿using MongoDB.Bson;
-using MongoDB.Bson.Serialization;
-using SimpleLog.Models.AppSettings;
+﻿using SimpleLog.Models.AppSettings;
 using System;
-using System.Data;
 using System.IO;
-using System.Runtime.Serialization.Json;
-using System.Text;
 using System.Text.Json;
-using System.Text.Json.Nodes;
-using System.Threading.Tasks;
 
 namespace SimpleLog.Services.ConfigurationServices
 {
