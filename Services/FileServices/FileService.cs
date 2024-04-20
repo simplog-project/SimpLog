@@ -47,9 +47,7 @@ namespace SimpleLog.Services.FileServices
         internal readonly bool? _Error_Db = (configuration.LogType.Error.SaveInDatabase == null) ? true : Convert.ToBoolean(configuration.LogType.Error.SaveInDatabase);
         internal readonly bool? _Fatal_Db = (configuration.LogType.Fatal.SaveInDatabase == null) ? true : Convert.ToBoolean(configuration.LogType.Fatal.SaveInDatabase);
 
-        public SimpLog.FileLog.Services.FileServices.FileService _obj = new SimpLog.FileLog.Services.FileServices.FileService();
-
-
+        public FileService _obj = new FileService();
 
         /// <summary>
         /// Pass message and check if it is for execution
@@ -239,8 +237,10 @@ namespace SimpleLog.Services.FileServices
             {
                 await _obj.Save(
                     message, 
-                    (SimpLog.FileLog.Models.LogType)logType, 
-                    (SimpLog.FileLog.Models.FileSaveType?)saveType, 
+                    (LogType)logType, 
+                    (FileSaveType?)saveType, 
+                    sendEmail,
+                    saveInDatabase,
                     path_to_save_log, 
                     log_file_name);
 

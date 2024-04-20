@@ -15,7 +15,7 @@
     <PackageTags>log, .net core, logging, simple, log email, send email, mssql log, mysql log, postgresql log, mongodb log </PackageTags>
     <AssemblyVersion></AssemblyVersion>
     <SignAssembly>False</SignAssembly>
-	<PackageReadmeFile>README.md</PackageReadmeFile>
+	<PackageReadmeFile></PackageReadmeFile>
 	<RepositoryUrl>https://github.com/gchekanov/SimpLog</RepositoryUrl>
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
@@ -46,10 +46,6 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\SimpLog.FileLog\SimpLog.FileLog\SimpLog.FileLog.csproj" />
   </ItemGroup>
 
 </Project>
