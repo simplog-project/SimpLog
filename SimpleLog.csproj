@@ -6,17 +6,17 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Authors>Georgi Chekanov</Authors>
 	<AssemblyName>Georgi Chekanov</AssemblyName>
-    <Version>2.2.5</Version>
+    <Version>2.2.6</Version>
     <PackageId>SimpLog</PackageId>
     <Description>A simple way of logging event in a log files. Can be set up to save into a file, send logs to an email or to save them in a database. Works for NetCore versions</Description>
     <Copyright>Copyright (c) Georgi Chekanov 2024</Copyright>
-    <Company>SimpLog</Company>
+    <Company>Georgi Chekanov</Company>
     <Product>SimpLog</Product>
     <PackageTags>log, .net core, logging, simple, log email, send email, mssql log, mysql log, postgresql log, mongodb log </PackageTags>
     <AssemblyVersion></AssemblyVersion>
     <SignAssembly>False</SignAssembly>
-	<PackageReadmeFile></PackageReadmeFile>
-	<RepositoryUrl>https://github.com/gchekanov/SimpLog</RepositoryUrl>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
+	<RepositoryUrl>https://github.com/simplog-project/SimpLog</RepositoryUrl>
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
@@ -27,22 +27,22 @@
 
 	<PropertyGroup>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
-		<PackageReleaseNotes>- .net 3.1 and 5 compatibility added
-		- upgraded System.Data.SqlClient because of vulnarability</PackageReleaseNotes>
+		<PackageReleaseNotes>- changed dependencies</PackageReleaseNotes>
+		<Title>SimpLog</Title>
 	</PropertyGroup>
 
 
 	<ItemGroup>
-    <PackageReference Include="MongoDB.Driver" Version="2.21.0" />
-    <PackageReference Include="MySqlConnector" Version="2.2.7" />
-    <PackageReference Include="Npgsql" Version="7.0.4" />
-    <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="3.21.110" />
-    <PackageReference Include="System.Data.OleDb" Version="7.0.0" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+    <PackageReference Include="SimpLog.Database.MSSQL" Version="1.0.1" />
+    <PackageReference Include="SimpLog.Databases.MongoDb" Version="1.0.0" />
+    <PackageReference Include="SimpLog.Databases.MySQL" Version="1.0.0" />
+    <PackageReference Include="SimpLog.Databases.PostgreSQL" Version="1.0.0" />
+    <PackageReference Include="SimpLog.Email" Version="1.0.0" />
+    <PackageReference Include="SimpLog.FileLog" Version="1.0.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="README.md">
+    <None Include="README.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>

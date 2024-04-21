@@ -128,7 +128,7 @@ await ServicesExtensions.SimpLog();
 **In Controller**
 
 ```
-private SimpLog _simpLog = new SimpLog();
+private SimpleLog.Services.SimpLogServices.SimpLog _simpLog = new SimpleLog.Services.SimpLogServices.SimpLog();
 ```
 
 and call the log like
@@ -138,7 +138,7 @@ _simpLog.Trace("place your message here");
 
 options are as follows
 ```
-_simpLog.Info({1}, {2}, {3}, {4}, {5}); 
+_simpLog.Info({1}, {2}, {3}, {4}, {5}, {6}); 
 ```
 and only {1} is required
 
@@ -147,8 +147,9 @@ and only {1} is required
 | {1} | Message | The message you want to log. |
 | {2} | Save file type | There are three types of save type. See the table below |
 | {3} | Send Email | If it is set to false the email notifications will be disabled only for this instance. If null or true, depending on the appsettings.json file EmailConfiguration section. |
-| {4} | Path to save log | If you need this instance to be saved in a different path, here place the new path of the log file. If it is null, file path will be taken from appsettings.json. The default path, if not set anywhere is the temp folder of the current user on the local machine. |
-| {5} | Log file name | If you need for this instance log file to be saved in a separate file with specific filename, set it here. If it is null, filename will be taken from appsettings.json. If no value is set here or in the appsettings.json the file will be with name SimpLog_ and todays number of the day of the year. If the log has been created on the first of February, then the filename if not set nowhere, by default will be SimpLog_32.txt |
+| {4} | Save into database | If it is set to true, it will save into a selected database if configured right. Else it won't use this feature. |
+| {5} | Path to save log | If you need this instance to be saved in a different path, here place the new path of the log file. If it is null, file path will be taken from appsettings.json. The default path, if not set anywhere is the temp folder of the current user on the local machine. |
+| {6} | Log file name | If you need for this instance log file to be saved in a separate file with specific filename, set it here. If it is null, filename will be taken from appsettings.json. If no value is set here or in the appsettings.json the file will be with name SimpLog_ and todays number of the day of the year. If the log has been created on the first of February, then the filename if not set nowhere, by default will be SimpLog_32.txt |
 
 File Save Types
 | Name | Description |

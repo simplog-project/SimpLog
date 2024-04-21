@@ -9,8 +9,10 @@ namespace SimpleLog.Services.ConfigurationServices
     {
         #region Main Configuration Variable
 
-        public static readonly string? _WhyLogIsNotWorkingPath;
-        
+        public static readonly string? _WhyLogIsNotWorkingPath = null;
+        public static readonly string? _WhyLogIsNotWorkingFileName = null;
+        public static readonly bool?   _Disable_Log = null;
+
         #endregion Main Configuration Variable
 
         #region Log File Configuration Variable
@@ -169,8 +171,9 @@ namespace SimpleLog.Services.ConfigurationServices
 
             #region Main Configuration Get From Json
 
-            _WhyLogIsNotWorkingPath = simpLogConfig.Main_Configuration.WhyLogIsNotWorkingPath;
-
+            _WhyLogIsNotWorkingPath     = simpLogConfig.Main_Configuration.WhyLogIsNotWorkingPath;
+            _WhyLogIsNotWorkingFileName = simpLogConfig.Main_Configuration.WhyLogIsNotWorkingFileName;
+            _Disable_Log                = simpLogConfig.Main_Configuration.Disable_Log;
             //            _WhyLogIsNotWorkingPath = (simpLogConfig.Main_Configuration.WhyLogIsNotWorkingPath == null) ? string.Empty : simpLogConfig.Main_Configuration.WhyLogIsNotWorkingPath.ToString();
 
             #endregion Main Configuration Get From Json
@@ -261,7 +264,9 @@ namespace SimpleLog.Services.ConfigurationServices
             {
                 Main_Configuration      = new MainConfiguration() 
                 {
-                    WhyLogIsNotWorkingPath = _WhyLogIsNotWorkingPath
+                    WhyLogIsNotWorkingPath = _WhyLogIsNotWorkingPath,
+                    WhyLogIsNotWorkingFileName = _WhyLogIsNotWorkingFileName,
+                    Disable_Log = _Disable_Log
                 },
                 File_Configuration       = new FileConfiguration()
                 {
